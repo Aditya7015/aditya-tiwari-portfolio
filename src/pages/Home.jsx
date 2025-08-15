@@ -15,7 +15,7 @@ export default function Home(){
           <p className="text-lg opacity-80 mt-1">{profile.role}</p>
           <p className="opacity-80 mt-4">{profile.summary}</p>
           <div className="flex gap-3 mt-6">
-            <a className="btn" href="/resume.pdf" download>Download Resume</a>
+            <a className="btn" href="/adityaresume.pdf" download>Download Resume</a>
             <a className="btn" href="#projects">View Products</a>
           </div>
         </motion.div>
