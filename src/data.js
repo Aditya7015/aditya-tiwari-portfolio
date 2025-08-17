@@ -45,7 +45,8 @@ export const projects = [
     description:'Dynamic ticket booking system with smooth frontend-backend integration, interactive booking flow, and clean UI.',
     tech:['MongoDB','Express.js','React.js','Node.js','Axios','CORS'],
     links:[
-      {label:'Repo', url:'https://github.com/Aditya9671/QuickShow'}
+      {label:'Live Demo', url:'https://quickshow-aditya-fcml.vercel.app/'},
+      {label:'Repo', url:'https://github.com/Aditya7015/quickshow-aditya.git'}
     ]
   },
   { slug:'job-portal', title:'Job Portal Web Application', subtitle:'MERN Stack',
