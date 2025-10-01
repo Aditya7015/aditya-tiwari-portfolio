@@ -24,6 +24,17 @@ export const skills = [
 
 export const projects = [
   {
+    slug: 'adishop',
+    title: 'AdiShop',
+    subtitle: 'Full-Stack E-Commerce Platform',
+    description: 'A complete MERN stack e-commerce solution with advanced features including AI-powered chatbot, secure payment integration, admin dashboard, real-time inventory management, and responsive design for seamless shopping experience.',
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Redux', 'Tailwind CSS', 'JWT', 'Stripe'],
+    links: [
+      { label: 'Live Demo', url: 'https://adi-shop-nine.vercel.app/' },
+      { label: 'GitHub', url: 'https://github.com/Aditya7015/AdiShop' }
+    ]
+  },
+  {
     slug: 'quickstay',
     title: 'QuickStay',
     subtitle: 'Full-Stack Hotel Booking Platform',
@@ -35,7 +46,9 @@ export const projects = [
     ]
   },
   {
-    slug:'ecommerce-webapp', title:'E-Commerce Web Application', subtitle:'MERN Stack',
+    slug:'ecommerce-webapp', 
+    title:'E-Commerce Web Application', 
+    subtitle:'MERN Stack',
     description:'Responsive, mobile-first e-commerce platform with secure JWT authentication, product search, filtering, cart, and admin dashboard.',
     tech:['MongoDB','Express.js','React.js','Node.js','Tailwind CSS','JWT'],
     links:[
@@ -45,7 +58,9 @@ export const projects = [
     ]
   },
   {
-    slug:'task-manager-pro', title:'Task Manager Pro', subtitle:'MERN Stack',
+    slug:'task-manager-pro', 
+    title:'Task Manager Pro', 
+    subtitle:'MERN Stack',
     description:'Real-time task manager with WebSocket updates, role-based access, file upload support, and responsive UI.',
     tech:['MongoDB','Express.js','React.js','Node.js','WebSockets','JWT'],
     links:[
@@ -55,7 +70,9 @@ export const projects = [
     ]
   },
   {
-    slug:'quickshow', title:'QuickShow', subtitle:'Ticket Booking Web App',
+    slug:'quickshow', 
+    title:'QuickShow', 
+    subtitle:'Ticket Booking Web App',
     description:'Dynamic ticket booking system with smooth frontend-backend integration, interactive booking flow, and clean UI.',
     tech:['MongoDB','Express.js','React.js','Node.js','Axios','CORS'],
     links:[
@@ -64,7 +81,9 @@ export const projects = [
     ]
   },
   {
-    slug:'job-portal', title:'Job Portal Web Application', subtitle:'MERN Stack',
+    slug:'job-portal', 
+    title:'Job Portal Web Application', 
+    subtitle:'MERN Stack',
     description:'Full-stack job portal enabling users to create profiles, search and apply for jobs, with recruiter dashboards for posting and managing openings.',
     tech:['MongoDB','Express.js','React.js','Node.js','JWT','Tailwind CSS'],
     links:[
