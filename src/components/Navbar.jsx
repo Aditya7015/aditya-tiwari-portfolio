@@ -43,7 +43,7 @@ export default function Navbar() {
             <a href="/#experience" className="hover:text-brand-500 transition-colors" onClick={() => setOpen(false)}>Experience</a>
             <NavLink to="/blog" className={navClass} onClick={() => setOpen(false)}>Blog</NavLink>
             <NavLink to="/admin" className={navClass} onClick={() => setOpen(false)}>Admin</NavLink>
-            <a href="/resume.pdf" download className="btn px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all" onClick={() => setOpen(false)}>Resume</a>
+            <a href="/adityaresume.pdf" download className="btn px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all" onClick={() => setOpen(false)}>Resume</a>
           </div>
         </div>
       )}
