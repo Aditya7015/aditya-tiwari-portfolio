@@ -19,10 +19,23 @@ export const skills = [
   'MongoDB', 'Mongoose',
   'JWT', 'Bcrypt', 'CORS',
   'Git', 'GitHub', 'Vercel', 'Render', 'Netlify',
-  'Data Structures & Algorithms'
+  'Data Structures & Algorithms', 'Socket.io', 'Cloudinary', 'Groq API'
 ]
 
 export const projects = [
+  {
+    slug: 'adichat',
+    title: 'AdiChat',
+    subtitle: 'Real-Time Messaging Platform with AI Assistant',
+    description: 'A WhatsApp-inspired real-time chat application featuring AI integration, instant messaging, image sharing, and mobile-responsive design. Built with modern WebSocket technology for seamless communication experience.',
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'Tailwind CSS', 'JWT', 'Cloudinary', 'Groq API'],
+    links: [
+      { label: 'Live Demo', url: 'https://adichat-alpha.vercel.app/' },
+      { label: 'Backend API', url: 'https://adichat-project.onrender.com/' },
+      { label: 'GitHub', url: 'https://github.com/Aditya7015/AdiChat-Project' }
+    ],
+    featured: true
+  },
   {
     slug: 'adishop',
     title: 'AdiShop',
@@ -32,7 +45,8 @@ export const projects = [
     links: [
       { label: 'Live Demo', url: 'https://adi-shop-nine.vercel.app/' },
       { label: 'GitHub', url: 'https://github.com/Aditya7015/AdiShop' }
-    ]
+    ],
+    featured: true
   },
   {
     slug: 'quickstay',
@@ -43,7 +57,8 @@ export const projects = [
     links: [
       { label: 'Live Demo', url: 'https://quickstay-omega-brown.vercel.app/' },
       { label: 'GitHub', url: 'https://github.com/Aditya7015/hotel-booking' }
-    ]
+    ],
+    featured: true
   },
   {
     slug:'ecommerce-webapp', 
@@ -95,7 +110,6 @@ export const projects = [
   }
 ];
 
-
 export const education = [
   { 
     school:"Galgotia's College of Engineering & Technology", 
@@ -138,8 +152,53 @@ export const experience = [
   }
 ];
 
-
 export const posts = [
+  {
+    slug: "building-adichat-real-time-messaging",
+    title: "Building AdiChat: Real-Time Messaging with AI",
+    date: "2025-09-25",
+    excerpt: "Learn how I built a WhatsApp-inspired chat application with real-time messaging, AI integration, and mobile-responsive design using MERN stack and WebSockets.",
+    content: `
+# Building AdiChat: Real-Time Messaging Platform
+
+AdiChat is a full-stack real-time messaging application that combines modern web technologies with AI-powered conversations.
+
+## Key Features
+- **Real-time messaging** with Socket.io
+- **Adi AI Assistant** powered by Groq API
+- **Image sharing** with Cloudinary integration
+- **Mobile-responsive** design
+- **JWT authentication** and secure messaging
+
+## Tech Stack
+- **Frontend**: React.js, Tailwind CSS, Socket.io Client
+- **Backend**: Node.js, Express.js, Socket.io
+- **Database**: MongoDB with Mongoose
+- **AI**: Groq API for intelligent conversations
+- **Storage**: Cloudinary for image uploads
+- **Deployment**: Vercel (Frontend) + Render (Backend)
+
+## Challenges & Solutions
+- **Real-time synchronization** - Implemented WebSocket connections for instant messaging
+- **Mobile responsiveness** - Used Tailwind CSS with mobile-first approach
+- **AI integration** - Seamlessly integrated Groq API for intelligent conversations
+
+\`\`\`javascript
+// Example Socket.io implementation
+io.on('connection', (socket) => {
+  socket.on('join-user', (userId) => {
+    socket.join(userId);
+  });
+  
+  socket.on('send-message', (data) => {
+    socket.to(data.receiverId).emit('receive-message', data);
+  });
+});
+\`\`\`
+
+[Live Demo](https://adichat-alpha.vercel.app/) | [GitHub Repo](https://github.com/Aditya7015/AdiChat-Project)
+`
+  },
   {
     slug: "getting-started-with-react-18",
     title: "Getting Started with React 18",
