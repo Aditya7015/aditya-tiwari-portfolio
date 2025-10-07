@@ -23,7 +23,7 @@ export default function Navbar() {
           <NavLink to="/blog" className={navClass}>Blog</NavLink>
           <NavLink to="/admin" className={navClass}>Admin</NavLink>
           <ThemeToggle />
-          <a href="/adityaresume.pdf" download className="btn px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all">Resume</a>
+          <a href="/AdityaTiwariResume.pdf" download className="btn px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all">Resume</a>
         </div>
 
         {/* Mobile Hamburger */}
