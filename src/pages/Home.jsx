@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion, useScroll } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
@@ -7,7 +7,9 @@ import {
   Github,
   Linkedin,
   Mail,
-  ArrowDownCircle
+  ArrowDownCircle,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 import {
@@ -24,7 +26,7 @@ import useMagnetic from "../hooks/useMagnetic";
 
 import profileimage from "../../public/logo.jpeg";
 
-/* ================= SKILLS (JWT FIXED) ================= */
+/* ================= SKILLS ================= */
 const SKILL_GROUPS = {
   Frontend: [
     { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
@@ -39,7 +41,7 @@ const SKILL_GROUPS = {
     { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
     {
       name: "JWT",
-      icon: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23007ACC'/><text x='50' y='60' font-size='36' text-anchor='middle' fill='white' font-family='Arial'>JWT</text></svg>"
+      icon: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23007ACC'/><text x='50' y='60' font-size='36' text-anchor='middle' fill='white'>JWT</text></svg>"
     }
   ],
   Tools: [
@@ -88,10 +90,19 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const resumeBtn = useMagnetic();
   const projectBtn = useMagnetic();
+  const projectRef = useRef(null);
+
+  const scrollProjects = (dir) => {
+    if (!projectRef.current) return;
+    const width = projectRef.current.offsetWidth;
+    projectRef.current.scrollBy({
+      left: dir === "left" ? -width : width,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <main className="relative bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden">
-
       <BackgroundFX />
       <CursorGlow />
 
@@ -107,7 +118,7 @@ export default function Home() {
 
       {/* ================= HERO ================= */}
       <section className="max-w-7xl mx-auto px-6 py-36 grid lg:grid-cols-2 gap-24 items-center">
-
+        {/* Left */}
         <div>
           <span className="inline-flex items-center gap-2 text-sm px-4 py-1 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 text-white shadow-lg">
             <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
@@ -123,8 +134,7 @@ export default function Home() {
             sequence={[
               "MERN Stack Developer", 1500,
               "AI SaaS Builder", 1500,
-              "Full-Stack Engineer", 1500,
-              "Founder & CEO of TalentIQ-AI"
+              "Full-Stack Engineer", 1500
             ]}
             speed={45}
             repeat={Infinity}
@@ -159,19 +169,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* PROFILE IMAGE (FIXED ASPECT) */}
+        {/* Right */}
         <Tilt tiltMaxAngleX={12} tiltMaxAngleY={12}>
           <div className="relative p-10 rounded-3xl bg-gradient-to-br from-violet-600 to-indigo-700 shadow-2xl">
             <div className="relative w-44 h-44 mx-auto mb-6 aspect-square">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-violet-500 to-indigo-500 blur-md"
-              />
               <img
                 src={profileimage}
                 alt="Aditya Tiwari"
-                className="relative w-full h-full rounded-full object-cover border-4 border-white shadow-xl"
+                className="w-full h-full rounded-full object-cover border-4 border-white shadow-xl"
               />
             </div>
 
@@ -189,20 +194,11 @@ export default function Home() {
 
       {/* ================= CODING PROFILES ================= */}
       <section className="max-w-5xl mx-auto px-6 py-24">
-        <h2 className="text-4xl font-extrabold mb-12 text-center">
-          Coding Profiles
-        </h2>
-
+        <h2 className="text-4xl font-extrabold mb-12 text-center">Coding Profiles</h2>
         <div className="grid sm:grid-cols-2 gap-10">
           {CODING_PROFILES.map((p, i) => (
-            <a
-              key={i}
-              href={p.link}
-              target="_blank"
-              rel="noreferrer"
-              className="group p-8 rounded-3xl bg-white/70 dark:bg-white/5 shadow-xl
-              hover:shadow-[0_30px_80px_-20px_rgba(168,85,247,0.6)] transition"
-            >
+            <a key={i} href={p.link} target="_blank" rel="noreferrer"
+              className="p-8 rounded-3xl bg-white/70 dark:bg-white/5 shadow-xl hover:scale-105 transition">
               <img src={p.logo} alt={p.name} className="h-12 mx-auto mb-4 object-contain" />
               <p className="text-center font-semibold">{p.name}</p>
             </a>
@@ -210,12 +206,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= PROJECTS ================= */}
-      <section id="projects" className="max-w-7xl mx-auto px-6 py-32">
+      {/* ================= PROJECTS (HORIZONTAL SCROLL ONLY CHANGE) ================= */}
+      <section id="projects" className="relative py-32">
         <h2 className="text-4xl font-extrabold mb-14 text-center">Projects</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+        {/* Arrows */}
+        <button
+          onClick={() => scrollProjects("left")}
+          className="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 z-10
+          p-3 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur shadow-lg hover:scale-110 transition"
+        >
+          <ChevronLeft />
+        </button>
+
+        <button
+          onClick={() => scrollProjects("right")}
+          className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 z-10
+          p-3 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur shadow-lg hover:scale-110 transition"
+        >
+          <ChevronRight />
+        </button>
+
+        {/* Scroll container */}
+        <div
+          ref={projectRef}
+          className="flex gap-10 px-6 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide"
+        >
           {projects.map((p, i) => (
-            <ProjectCard key={p.slug} p={p} index={i} />
+            <div
+              key={p.slug}
+              className="min-w-[320px] sm:min-w-[380px] lg:min-w-[420px] snap-start"
+            >
+              <ProjectCard p={p} index={i} />
+            </div>
           ))}
         </div>
       </section>
@@ -243,14 +266,11 @@ export default function Home() {
       <section className="max-w-5xl mx-auto px-6 py-32">
         <h2 className="text-4xl font-extrabold mb-14 text-center">Education</h2>
         <div className="relative space-y-12">
-          <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-gradient-to-b from-pink-500 to-violet-600" />
           {education.map((e, i) => (
-            <div key={i} className="pl-20">
-              <div className="p-6 rounded-2xl bg-white/70 dark:bg-white/5 shadow-lg">
-                <h3 className="font-semibold">{e.degree}</h3>
-                <p className="opacity-80">{e.school}</p>
-                <p className="text-sm opacity-60">{e.start} – {e.end}</p>
-              </div>
+            <div key={i} className="p-6 rounded-2xl bg-white/70 dark:bg-white/5 shadow-lg">
+              <h3 className="font-semibold">{e.degree}</h3>
+              <p className="opacity-80">{e.school}</p>
+              <p className="text-sm opacity-60">{e.start} – {e.end}</p>
             </div>
           ))}
         </div>
@@ -265,10 +285,7 @@ export default function Home() {
             <h3 className="text-2xl font-semibold mb-8 text-center opacity-80">{group}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
               {items.map((s, i) => (
-                <div
-                  key={i}
-                  className="p-6 rounded-2xl bg-white/70 dark:bg-white/5 shadow-lg flex flex-col items-center gap-3"
-                >
+                <div key={i} className="p-6 rounded-2xl bg-white/70 dark:bg-white/5 shadow-lg flex flex-col items-center gap-3">
                   <img src={s.icon} alt={s.name} className="w-14 h-14 object-contain" />
                   <span className="font-medium">{s.name}</span>
                 </div>
@@ -280,9 +297,7 @@ export default function Home() {
 
       {/* ================= CERTIFICATIONS ================= */}
       <section className="max-w-7xl mx-auto px-6 py-32">
-        <h2 className="text-4xl font-extrabold mb-14 text-center">
-          Licenses & Certifications
-        </h2>
+        <h2 className="text-4xl font-extrabold mb-14 text-center">Licenses & Certifications</h2>
 
         <div className="grid sm:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {CERTIFICATIONS.map((c, i) => (
@@ -294,10 +309,8 @@ export default function Home() {
                   <p className="opacity-80">{c.issuer}</p>
                 </div>
               </div>
-
               <p className="mt-4 text-sm opacity-80">Issued: {c.issued}</p>
               <p className="text-sm opacity-80">Credential ID: {c.credentialId}</p>
-
               <a
                 href={c.link}
                 target="_blank"
