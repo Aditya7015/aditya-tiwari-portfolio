@@ -9,7 +9,7 @@ export const profile = {
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/adityatiwari77/' },
     { label: 'Portfolio', url: 'https://e-commerce-frontend-mu-flax.vercel.app' }
   ],
-  summary: 'Motivated Computer Science student with strong MERN stack skills, hands-on deployment experience, and proven problem-solving ability (250+ DSA problems solved). Seeking opportunities to build scalable, user-friendly applications.'
+  summary: 'Motivated Computer Science student with strong MERN stack skills, hands-on deployment experience, and proven problem-solving ability (350+ DSA problems solved). Seeking opportunities to build scalable, user-friendly applications.'
 }
 
 export const skills = [
