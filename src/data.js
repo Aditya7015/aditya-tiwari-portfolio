@@ -24,6 +24,42 @@ export const skills = [
 
 export const projects = [
   {
+  slug: 'talentiq-ai',
+  title: 'TalentIQ AI',
+  subtitle: 'AI-Powered ATS & Smart Recruitment Platform',
+  description:
+    'TalentIQ AI is a production-grade Applicant Tracking System (ATS) that leverages AI to analyze resumes, score candidates, and streamline the hiring process. It provides role-based dashboards for candidates and recruiters, real-time application tracking, automated email notifications, and AI-driven insights — built with a scalable SaaS-ready architecture.',
+  tech: [
+    'React.js',
+    'Tailwind CSS',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'JWT',
+    'Cloudinary',
+    'Brevo Email API',
+    'Groq API',
+    'Render',
+    'Vercel'
+  ],
+  links: [
+    {
+      label: 'Live Frontend',
+      url: 'https://talentiq-ai.vercel.app/'
+    },
+    {
+      label: 'Frontend GitHub',
+      url: 'https://github.com/Aditya7015/ats-ai-frontend'
+    },
+    {
+      label: 'Backend GitHub',
+      url: 'https://github.com/Aditya7015/talentiqai-backend'
+    }
+  ],
+  featured: true
+},
+
+  {
     slug: 'adichat',
     title: 'AdiChat',
     subtitle: 'Real-Time Messaging Platform with AI Assistant',
