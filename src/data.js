@@ -60,6 +60,44 @@ export const projects = [
 },
 
   {
+  slug: 'codemaster',
+  title: 'CodeMaster',
+  subtitle: 'Real-Time Coding Contest & Problem Solving Platform',
+  description:
+    'CodeMaster is a full-stack competitive programming platform inspired by LeetCode and CodeChef. It supports coding problem solving, real-time contests, live leaderboards using Socket.IO, AI-powered coding assistance, secure authentication, and video-based problem explanations. Built with scalable MERN architecture and modern real-time technologies.',
+  tech: [
+    'React.js',
+    'Tailwind CSS',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'Redux Toolkit',
+    'Socket.IO',
+    'JWT',
+    'Redis',
+    'Cloudinary',
+    'Google GenAI',
+    'Vercel',
+    'Render'
+  ],
+  links: [
+    {
+      label: 'Live Frontend',
+      url: 'https://code-master-opal.vercel.app/'
+    },
+    {
+      label: 'Backend API',
+      url: 'https://codemaster-backend-1m59.onrender.com'
+    },
+    {
+      label: 'GitHub',
+      url: 'https://github.com/Aditya7015/CodeMaster'
+    }
+  ],
+  featured: true
+},
+  
+  {
     slug: 'adichat',
     title: 'AdiChat',
     subtitle: 'Real-Time Messaging Platform with AI Assistant',
