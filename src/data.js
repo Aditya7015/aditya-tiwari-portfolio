@@ -96,7 +96,18 @@ export const projects = [
   ],
   featured: true
 },
-  
+  {
+    slug: 'adishop',
+    title: 'AdiShop',
+    subtitle: 'Full-Stack E-Commerce Platform',
+    description: 'A complete MERN stack e-commerce solution with advanced features including AI-powered chatbot, secure payment integration, admin dashboard, real-time inventory management, and responsive design for seamless shopping experience.',
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Redux', 'Tailwind CSS', 'JWT', 'Stripe'],
+    links: [
+      { label: 'Live Demo', url: 'https://adi-shop-nine.vercel.app/' },
+      { label: 'GitHub', url: 'https://github.com/Aditya7015/AdiShop' }
+    ],
+    featured: true
+  },
   {
     slug: 'adichat',
     title: 'AdiChat',
@@ -107,18 +118,6 @@ export const projects = [
       { label: 'Live Demo', url: 'https://adichat-alpha.vercel.app/' },
       { label: 'Backend API', url: 'https://adichat-project.onrender.com/' },
       { label: 'GitHub', url: 'https://github.com/Aditya7015/AdiChat-Project' }
-    ],
-    featured: true
-  },
-  {
-    slug: 'adishop',
-    title: 'AdiShop',
-    subtitle: 'Full-Stack E-Commerce Platform',
-    description: 'A complete MERN stack e-commerce solution with advanced features including AI-powered chatbot, secure payment integration, admin dashboard, real-time inventory management, and responsive design for seamless shopping experience.',
-    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Redux', 'Tailwind CSS', 'JWT', 'Stripe'],
-    links: [
-      { label: 'Live Demo', url: 'https://adi-shop-nine.vercel.app/' },
-      { label: 'GitHub', url: 'https://github.com/Aditya7015/AdiShop' }
     ],
     featured: true
   },
