@@ -109,6 +109,18 @@ export const projects = [
     featured: true
   },
   {
+    slug: 'quickstay',
+    title: 'QuickStay',
+    subtitle: 'Full-Stack Hotel Booking Platform',
+    description: 'QuickStay is a fully functional hotel booking platform built using the MERN stack. It provides users with a seamless experience to search, book, and manage hotel stays, while incorporating secure authentication, payment integration, and automated email confirmations.',
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'Clerk', 'Stripe', 'Brevo'],
+    links: [
+      { label: 'Live Demo', url: 'https://quickstay-omega-brown.vercel.app/' },
+      { label: 'GitHub', url: 'https://github.com/Aditya7015/hotel-booking' }
+    ],
+    featured: true
+  },
+  {
     slug: 'adichat',
     title: 'AdiChat',
     subtitle: 'Real-Time Messaging Platform with AI Assistant',
@@ -118,18 +130,6 @@ export const projects = [
       { label: 'Live Demo', url: 'https://adichat-alpha.vercel.app/' },
       { label: 'Backend API', url: 'https://adichat-project.onrender.com/' },
       { label: 'GitHub', url: 'https://github.com/Aditya7015/AdiChat-Project' }
-    ],
-    featured: true
-  },
-  {
-    slug: 'quickstay',
-    title: 'QuickStay',
-    subtitle: 'Full-Stack Hotel Booking Platform',
-    description: 'QuickStay is a fully functional hotel booking platform built using the MERN stack. It provides users with a seamless experience to search, book, and manage hotel stays, while incorporating secure authentication, payment integration, and automated email confirmations.',
-    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'Clerk', 'Stripe', 'Brevo'],
-    links: [
-      { label: 'Live Demo', url: 'https://quickstay-omega-brown.vercel.app/' },
-      { label: 'GitHub', url: 'https://github.com/Aditya7015/hotel-booking' }
     ],
     featured: true
   },
