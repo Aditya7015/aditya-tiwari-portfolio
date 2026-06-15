@@ -60,6 +60,32 @@ export const projects = [
 },
 
   {
+    slug: 'rydex',
+    title: 'Rydex',
+    subtitle: 'Full-Stack Ride-Sharing Platform (Ola/Uber/BlaBlaCar Style)',
+    description: 'Rydex is a production-ready carpooling platform that connects drivers with empty seats to passengers traveling the same route. Features include real-time live driver tracking (3-second updates), email OTP authentication, in-app chat, interactive maps with route drawing, location autocomplete, booking system with accept/reject, rating system, and responsive mobile-first design. Built with scalable MERN architecture and real-time WebSocket technology.',
+    tech: [
+      'React.js',
+      'Tailwind CSS',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Socket.io',
+      'JWT',
+      'MapTiler API',
+      'Brevo Email API',
+      'Render',
+      'Vercel'
+    ],
+    links: [
+      { label: 'Live Demo', url: 'https://rydex-two.vercel.app/' },
+      { label: 'Backend API', url: 'https://rydex-3yva.onrender.com/' },
+      { label: 'GitHub', url: 'https://github.com/Aditya7015/Rydex' }
+    ],
+    featured: true
+  },
+
+  {
   slug: 'codemaster',
   title: 'CodeMaster',
   subtitle: 'Real-Time Coding Contest & Problem Solving Platform',
